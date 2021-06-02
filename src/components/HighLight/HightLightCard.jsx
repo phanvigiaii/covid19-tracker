@@ -6,6 +6,7 @@ import {
     Typography,
 } from "@material-ui/core";
 import React from "react";
+import CountUp from "react-countup";
 
 HightLightCard.propTypes = {};
 
@@ -56,7 +57,7 @@ function HightLightCard({ item }) {
                         variant="body2"
                         className={styles.count}
                     >
-                        {count}
+                        <CountUp end={count || 0} duration={2} />
                     </Typography>
                 </CardContent>
             </Card>

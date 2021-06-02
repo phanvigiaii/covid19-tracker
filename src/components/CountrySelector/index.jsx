@@ -11,8 +11,11 @@ CountrySelector.propTypes = {};
 
 const useStyles = makeStyles({
     label: {
-        fontSize: 18,
+        fontSize: 20,
         fontWeight: "bold",
+    },
+    helper: {
+        fontSize: 20,
     },
 });
 
@@ -20,7 +23,7 @@ function CountrySelector({ value, handleOnChange, countries }) {
     const styles = useStyles();
 
     return (
-        <FormControl>
+        <FormControl style={{ marginTop: "50px" }}>
             <InputLabel
                 htmlFor="country-selector"
                 shrink
@@ -44,7 +47,9 @@ function CountrySelector({ value, handleOnChange, countries }) {
                     );
                 })}
             </NativeSelect>
-            <FormHelperText>Lựa chọn quốc gia</FormHelperText>
+            <FormHelperText className={styles.helper}>
+                Lựa chọn quốc gia
+            </FormHelperText>
         </FormControl>
     );
 }

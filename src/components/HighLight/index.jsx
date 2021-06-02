@@ -1,12 +1,5 @@
+import { Grid, makeStyles } from "@material-ui/core";
 import React from "react";
-import PropTypes from "prop-types";
-import {
-    Card,
-    CardContent,
-    Grid,
-    makeStyles,
-    Typography,
-} from "@material-ui/core";
 import HightLightCard from "./HightLightCard";
 
 HighLight.propTypes = {};
@@ -17,6 +10,7 @@ const useStyles = makeStyles({
         marginBottom: 50,
     },
 });
+
 function HighLight({ report }) {
     const data = report[report.length - 1];
     const styles = useStyles();
