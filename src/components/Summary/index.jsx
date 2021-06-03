@@ -13,9 +13,11 @@ function Summary({ report, selectedCountryID }) {
         if (selectedCountryID) {
             import(
                 `@highcharts/map-collection/countries/${selectedCountryID}/${selectedCountryID}-all.geo.json`
-            ).then((res) => {
-                setReportCountry(res);
-            });
+            )
+                .then((res) => {
+                    setReportCountry(res);
+                })
+                .catch((e) => console.log(e));
         }
     }, [selectedCountryID]);
 

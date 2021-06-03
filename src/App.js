@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
+import "@fontsource/roboto";
+import { Container, Typography } from "@material-ui/core";
+import _ from "lodash";
+import moment from "moment";
+import "moment/locale/vi";
+import React, { useEffect, useState } from "react";
 import { getCountries, getReportByCountry } from "./apis";
 import CountrySelector from "./components/CountrySelector";
 import HighLight from "./components/HighLight";
 import Summary from "./components/Summary";
-import _ from "lodash";
-import { Container, Typography } from "@material-ui/core";
-import moment from "moment";
-import "moment/locale/vi";
-import "@fontsource/roboto";
 
 moment.locale("vi");
 
@@ -24,9 +24,9 @@ function App() {
         });
     }, []);
 
-    const handleOnChange = (e) => {
+    const handleOnChange = React.useCallback((e) => {
         setSelectedCountryID(e.target.value);
-    };
+    }, []);
 
     useEffect(() => {
         if (selectedCountryID) {

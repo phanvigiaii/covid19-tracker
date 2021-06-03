@@ -34,7 +34,8 @@ const initOptions = {
     },
     series: [
         {
-            name: "Dân số",
+            mapData: {},
+            name: "Số ca nhiễm",
             joinBy: ["hc-key", "key"],
         },
     ],
@@ -73,7 +74,7 @@ function HighMap({ reportCountry }) {
     useEffect(() => {
         if (chartRef && chartRef.current) {
             chartRef.current.chart.series[0].update({
-                reportCountry,
+                mapData: reportCountry,
             });
         }
     }, [options, reportCountry]);
