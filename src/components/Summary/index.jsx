@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Grid } from "@material-ui/core";
 import LineChart from "../Charts/LineChart";
 import HighMap from "../Charts/HighMap";
+import { getMapByCountry } from "../../apis";
 
 Summary.propTypes = {};
 
@@ -11,9 +12,7 @@ function Summary({ report, selectedCountryID }) {
 
     useEffect(() => {
         if (selectedCountryID) {
-            import(
-                `@highcharts/map-collection/countries/${selectedCountryID}/${selectedCountryID}-all.geo.json`
-            )
+            getMapByCountry(selectedCountryID)
                 .then((res) => {
                     setReportCountry(res);
                 })

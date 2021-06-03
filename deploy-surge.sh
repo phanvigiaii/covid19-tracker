@@ -1,3 +1,5 @@
+# build production
+npm run build
 
 # Move to build folder
 cd build
